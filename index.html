@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rumeysa Sevinc | Portfolio Cybersécurité</title>
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --rose: #e98bc4;
+            --rose-clair: #f7c8e5;
+            --rose-fonce: #c85c9d;
+
+            --fond: #0d0b12;
+            --fond-secondaire: #131019;
+            --carte: #19151f;
+
+            --texte: #f8f5f8;
+            --gris: #bdb6c2;
+
+            --bordure: #342b38;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fond);
+            color: var(--texte);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background: rgba(13, 11, 18, 0.96);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--bordure);
+
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 18px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--rose);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 22px;
+        }
+
+        nav ul li a {
+            color: var(--texte);
+
+            text-decoration: none;
+
+            font-size: 0.9rem;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--rose);
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 100px 30px;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--rose);
+
+            font-size: 2.3rem;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--gris);
+        }
+
+
+        /* =====================================================
+           ACCUEIL
+        ===================================================== */
+
+        #accueil {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding-top: 120px;
+        }
+
+        .hero-small {
+            color: var(--rose);
+
+            font-size: 0.9rem;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-name {
+            font-size: clamp(4rem, 10vw, 8rem);
+
+            line-height: 0.9;
+
+            font-weight: 800;
+
+            letter-spacing: -5px;
+        }
+
+        .hero-name span {
+            display: block;
+
+            color: var(--rose);
+        }
+
+        .hero-subtitle {
+            margin-top: 30px;
+
+            font-size: 1.4rem;
+
+            color: var(--gris);
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding: 13px 28px;
+
+            border: 1px solid var(--rose);
+
+            border-radius: 30px;
+
+            color: var(--rose);
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--rose);
+
+            color: var(--fond);
+        }
+
+
+        /* =====================================================
+           À PROPOS
+        ===================================================== */
+
+        .about-container {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about-container p {
+            color: var(--gris);
+
+            font-size: 1.05rem;
+
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--rose-clair);
+
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           PARCOURS
+        ===================================================== */
+
+        .timeline {
+            position: relative;
+
+            max-width: 950px;
+
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 3px;
+
+            height: 100%;
+
+            background: var(--rose);
+
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            width: 50%;
+
+            padding: 20px 45px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            top: 30px;
+
+            width: 15px;
+            height: 15px;
+
+            background: var(--rose);
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px var(--rose);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -7px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -7px;
+        }
+
+        .timeline-content {
+            background: var(--carte);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--rose);
+
+            transform: translateY(-4px);
+        }
+
+        .timeline-content h3 {
+            color: var(--rose);
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: var(--gris);
+        }
+
+
+        /* =====================================================
+           COMPÉTENCES
+        ===================================================== */
+
+        .competences-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .competence-card {
+            background: var(--carte);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .competence-card:hover {
+            border-color: var(--rose);
+
+            transform: translateY(-5px);
+        }
+
+        .competence-icon {
+            font-size: 2.2rem;
+
+            margin-bottom: 15px;
+        }
+
+        .competence-card h3 {
+            color: var(--rose);
+
+            font-size: 1.4rem;
+
+            margin-bottom: 15px;
+        }
+
+        .competence-description {
+            color: var(--gris);
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+        .competence-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .competence-tags span {
+            color: var(--rose-clair);
+
+            background: var(--fond-secondaire);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 20px;
+
+            padding: 7px 12px;
+
+            font-size: 0.85rem;
+
+            transition: 0.3s;
+        }
+
+        .competence-tags span:hover {
+            border-color: var(--rose);
+
+            color: var(--rose);
+        }
+
+
+        /* =====================================================
+           CERTIFICATIONS
+        ===================================================== */
+
+        .certifications-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .certification-card {
+            background: var(--carte);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .certification-card:hover {
+            border-color: var(--rose);
+
+            transform: translateY(-5px);
+        }
+
+        .certification-icon {
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+        }
+
+        .certification-card h3 {
+            color: var(--rose);
+
+            font-size: 1.5rem;
+
+            margin-bottom: 5px;
+        }
+
+        .certification-card h4 {
+            color: var(--texte);
+
+            font-size: 1rem;
+
+            margin-bottom: 15px;
+        }
+
+        .certification-status {
+            display: inline-block;
+
+            color: var(--rose-clair);
+
+            background: rgba(233, 139, 196, 0.08);
+
+            border: 1px solid var(--rose-fonce);
+
+            border-radius: 20px;
+
+            padding: 5px 12px;
+
+            font-size: 0.85rem;
+
+            margin-bottom: 18px;
+        }
+
+        .certification-card p {
+            color: var(--gris);
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           PROJETS
+        ===================================================== */
+
+        .projects-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--carte);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--rose);
+
+            transform: translateY(-5px);
+        }
+
+        .project-number {
+            color: var(--rose);
+
+            font-size: 0.9rem;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--gris);
+        }
+
+
+        /* =====================================================
+           VEILLE TECHNOLOGIQUE
+        ===================================================== */
+
+        .watch-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            background: var(--carte);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 18px;
+
+            padding: 35px;
+
+            text-align: center;
+        }
+
+        .watch-box h3 {
+            color: var(--rose);
+
+            margin-bottom: 15px;
+        }
+
+        .watch-box p {
+            color: var(--gris);
+        }
+
+
+        /* =====================================================
+           OBJECTIF
+        ===================================================== */
+
+        .goal-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            padding: 45px;
+
+            background: var(--carte);
+
+            border: 1px solid var(--rose);
+
+            border-radius: 20px;
+        }
+
+        .goal-box h3 {
+            color: var(--rose);
+
+            font-size: 1.8rem;
+
+            margin-bottom: 15px;
+        }
+
+        .goal-box p {
+            color: var(--gris);
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: var(--carte);
+
+            border: 1px solid var(--bordure);
+
+            border-radius: 18px;
+
+            padding: 35px;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--rose);
+
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            color: var(--rose);
+
+            font-size: 1.5rem;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-card p {
+            color: var(--gris);
+
+            margin-bottom: 15px;
+        }
+
+        .contact-email {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            color: var(--rose-clair);
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            word-break: break-word;
+        }
+
+        .contact-email:hover {
+            color: var(--rose);
+        }
+
+        .stage-highlight {
+            color: var(--rose-clair);
+
+            font-weight: bold;
+        }
+
+        .stage-title {
+            color: var(--rose-clair);
+
+            font-weight: bold;
+
+            font-size: 1.05rem;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            border-top: 1px solid var(--bordure);
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: var(--gris);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 0.75rem;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .hero-name {
+                font-size: 4.5rem;
+            }
+
+            .timeline::before {
+                left: 15px;
+
+                transform: none;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+
+                width: 100%;
+
+                left: 0;
+
+                text-align: left;
+
+                padding-left: 50px;
+
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+
+                left: 8px;
+
+                right: auto;
+            }
+
+            .competences-grid,
+            .certifications-grid,
+            .projects-grid,
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#accueil" class="logo">
+                RS.
+            </a>
+
+            <ul>
+
+                <li>
+                    <a href="#apropos">
+                        À propos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#parcours">
+                        Parcours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#competences">
+                        Compétences
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#certifications">
+                        Certifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projets">
+                        Projets
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#veille">
+                        Veille
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Me contacter
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         ACCUEIL
+    ===================================================== -->
+
+    <section id="accueil">
+
+        <div class="hero-small">
+            Portfolio
+        </div>
+
+        <h1 class="hero-name">
+
+            Rumeysa
+
+            <span>
+                Sevinc
+            </span>
+
+        </h1>
+
+        <p class="hero-subtitle">
+            Future analyste en cybersécurité
+        </p>
+
+        <a href="#apropos" class="hero-button">
+            Découvrir mon parcours
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         À PROPOS
+    ===================================================== -->
+
+    <section id="apropos">
+
+        <div class="section-title">
+
+            <h2>
+                À propos de moi
+            </h2>
+
+            <p>
+                Qui suis-je ?
+            </p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <p>
+
+                Je m'appelle
+
+                <span class="highlight">
+                    Rumeysa Sevinc
+                </span>
+
+                et je suis actuellement en BTS SIO,
+                option SISR.
+
+            </p>
+
+
+            <p>
+
+                Après une première expérience dans le domaine
+                de la gestion-administration, j'ai choisi de revenir
+                vers l'informatique afin de développer mes connaissances
+                et de me rapprocher d'un domaine qui m'intéresse
+                particulièrement :
+
+                <span class="highlight">
+                    la cybersécurité
+                </span>.
+
+            </p>
+
+
+            <p>
+
+                Curieuse et motivée, je souhaite continuer à apprendre,
+                développer mes compétences techniques et découvrir
+                progressivement le monde professionnel de l'informatique.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PARCOURS
+    ===================================================== -->
+
+    <section id="parcours">
+
+        <div class="section-title">
+
+            <h2>
+                Mon parcours
+            </h2>
+
+            <p>
+                Mon évolution scolaire et professionnelle
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        2019
+                    </h3>
+
+                    <p>
+                        Obtention du brevet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        2023
+                    </h3>
+
+                    <p>
+                        Obtention du baccalauréat.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        2022 – 2025
+                    </h3>
+
+                    <p>
+
+                        Expériences professionnelles en intérim
+                        auprès de Jovidore et CLP.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Stage — 3 semaines
+                    </h3>
+
+                    <p>
+
+                        <strong>
+                            Collège Marie Noel
+                        </strong>
+
+                        — Joigny
+
+                        <br><br>
+
+                        Stage dans le domaine
+                        de l'administration.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Stage — 3 semaines
+                    </h3>
+
+                    <p>
+
+                        <strong>
+                            RSOF
+                        </strong>
+
+                        — Menuiserie.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Stage — 3 semaines
+                    </h3>
+
+                    <p>
+
+                        <strong>
+                            Santé Attitude
+                        </strong>
+
+                        — Découverte du fonctionnement
+                        d'une structure professionnelle.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Actuellement
+                    </h3>
+
+                    <p>
+
+                        <strong>
+                            BTS SIO
+                        </strong>
+
+                        — option SISR.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Objectif professionnel
+                    </h3>
+
+                    <p>
+
+                        Évoluer vers le métier d'
+
+                        <strong>
+                            analyste en cybersécurité
+                        </strong>.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMPÉTENCES
+    ===================================================== -->
+
+    <section id="competences">
+
+
+        <div class="section-title">
+
+            <h2>
+                Mes compétences
+            </h2>
+
+            <p>
+                Administration, réseaux, support et cybersécurité
+            </p>
+
+        </div>
+
+
+        <div class="competences-grid">
+
+
+            <!-- ADMINISTRATION -->
+
+            <div class="competence-card">
+
+                <div class="competence-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Administration Système
+                </h3>
+
+                <p class="competence-description">
+
+                    Déploiement et administration de serveurs
+                    Windows et Linux, gestion des accès Active Directory
+                    et virtualisation.
+
+                </p>
+
+
+                <div class="competence-tags">
+
+                    <span>
+                        Windows Server (AD, GPO)
+                    </span>
+
+                    <span>
+                        Linux (Debian / Ubuntu)
+                    </span>
+
+                    <span>
+                        Proxmox / ESXi
+                    </span>
+
+                    <span>
+                        Bash
+                    </span>
+
+                    <span>
+                        PowerShell
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RÉSEAUX -->
+
+            <div class="competence-card">
+
+                <div class="competence-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Infrastructures Réseaux
+                </h3>
+
+                <p class="competence-description">
+
+                    Configuration du routage, découpage réseau
+                    avec les VLAN et sous-réseaux et mise en place
+                    des services essentiels.
+
+                </p>
+
+
+                <div class="competence-tags">
+
+                    <span>
+                        Routage & Commutation
+                    </span>
+
+                    <span>
+                        VLAN & Adressage IP
+                    </span>
+
+                    <span>
+                        Cisco Packet Tracer
+                    </span>
+
+                    <span>
+                        DNS
+                    </span>
+
+                    <span>
+                        DHCP
+                    </span>
+
+                    <span>
+                        Web
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUPPORT -->
+
+            <div class="competence-card">
+
+                <div class="competence-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Support & Supervision
+                </h3>
+
+                <p class="competence-description">
+
+                    Gestion du parc informatique, traitement des
+                    tickets d'assistance et surveillance des serveurs.
+
+                </p>
+
+
+                <div class="competence-tags">
+
+                    <span>
+                        GLPI (Ticketing & Parc)
+                    </span>
+
+                    <span>
+                        Gestion d'incidents
+                    </span>
+
+                    <span>
+                        Zabbix / Centreon
+                    </span>
+
+                    <span>
+                        Sauvegardes (Veeam)
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SÉCURITÉ -->
+
+            <div class="competence-card">
+
+                <div class="competence-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Sécurité & Pentest
+                </h3>
+
+                <p class="competence-description">
+
+                    Sécurisation du réseau avec des pare-feu,
+                    mise en place de tunnels VPN et entraînement
+                    aux bases du pentest.
+
+                </p>
+
+
+                <div class="competence-tags">
+
+                    <span>
+                        Pare-feu (pfSense)
+                    </span>
+
+                    <span>
+                        VPN & Cryptographie
+                    </span>
+
+                    <span>
+                        Kali Linux
+                    </span>
+
+                    <span>
+                        Wireshark
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CERTIFICATIONS
+    ===================================================== -->
+
+    <section id="certifications">
+
+
+        <div class="section-title">
+
+            <h2>
+                Certifications
+            </h2>
+
+            <p>
+                Certifications en cours de préparation
+            </p>
+
+        </div>
+
+
+        <div class="certifications-grid">
+
+
+            <!-- AZ-900 -->
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    AZ-900
+                </h3>
+
+                <h4>
+                    Microsoft Azure Fundamentals
+                </h4>
+
+                <span class="certification-status">
+                    ⏳ En préparation
+                </span>
+
+                <p>
+
+                    Maîtrise des concepts généraux du Cloud,
+                    des services de calcul, de stockage et des
+                    modèles de gouvernance Azure.
+
+                </p>
+
+            </div>
+
+
+            <!-- AZ-104 -->
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    AZ-104
+                </h3>
+
+                <h4>
+                    Microsoft Azure Administrator
+                </h4>
+
+                <span class="certification-status">
+                    ⏳ En préparation
+                </span>
+
+                <p>
+
+                    Gestion opérationnelle des ressources Cloud :
+                    identités Entra ID, réseaux virtuels,
+                    machines virtuelles et surveillance.
+
+                </p>
+
+            </div>
+
+
+            <!-- CCNA -->
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    🖧
+                </div>
+
+                <h3>
+                    CCNA
+                </h3>
+
+                <h4>
+                    Cisco Certified Network Associate
+                </h4>
+
+                <span class="certification-status">
+                    ⏳ En préparation
+                </span>
+
+                <p>
+
+                    Validation approfondie des architectures
+                    réseaux Cisco : protocoles de routage,
+                    notamment OSPF, sécurité des ports et services IP.
+
+                </p>
+
+            </div>
+
+
+            <!-- eJPT -->
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    eJPT
+                </h3>
+
+                <h4>
+                    eLearnSecurity Junior Pentester
+                </h4>
+
+                <span class="certification-status">
+                    ⏳ En préparation
+                </span>
+
+                <p>
+
+                    Évaluation pratique orientée sécurité offensive :
+                    scan réseau, découverte de failles, exploitation
+                    web et escalade de privilèges.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJETS
+    ===================================================== -->
+
+    <section id="projets">
+
+
+        <div class="section-title">
+
+            <h2>
+                Mes projets
+            </h2>
+
+            <p>
+                Projets réalisés et futurs projets
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>
+                    Projet réseau
+                </h3>
+
+                <p>
+
+                    Projet autour de la configuration réseau,
+                    de l'adressage IP, du routage et des
+                    infrastructures.
+
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>
+                    Projet système
+                </h3>
+
+                <p>
+
+                    Projet autour de l'installation,
+                    de la configuration et de l'administration
+                    des systèmes informatiques.
+
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h3>
+                    Projet cybersécurité
+                </h3>
+
+                <p>
+
+                    Projet permettant de développer mes connaissances
+                    en sécurité informatique, en protection des systèmes
+                    et en analyse.
+
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    04
+                </div>
+
+                <h3>
+                    Futur projet
+                </h3>
+
+                <p>
+
+                    De nouveaux projets seront ajoutés au fur et à
+                    mesure de ma formation et de mon évolution.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VEILLE TECHNOLOGIQUE
+    ===================================================== -->
+
+    <section id="veille">
+
+
+        <div class="section-title">
+
+            <h2>
+                Veille technologique
+            </h2>
+
+            <p>
+                Suivre l'évolution de la cybersécurité
+            </p>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <h3>
+                Cybersécurité & nouvelles technologies
+            </h3>
+
+            <p>
+
+                Je souhaite effectuer une veille technologique
+                afin de suivre les nouvelles menaces, les vulnérabilités,
+                les outils de sécurité et les évolutions du domaine
+                de la cybersécurité.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         OBJECTIF
+    ===================================================== -->
+
+    <section id="objectif">
+
+
+        <div class="section-title">
+
+            <h2>
+                Mon objectif
+            </h2>
+
+            <p>
+                Construire mon avenir professionnel
+            </p>
+
+        </div>
+
+
+        <div class="goal-box">
+
+            <h3>
+                Analyste en cybersécurité
+            </h3>
+
+            <p>
+
+                Mon objectif professionnel est de continuer à
+                développer mes compétences en informatique,
+                réseaux, systèmes et sécurité afin d'évoluer
+                progressivement vers le métier d'analyste
+                en cybersécurité.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section id="contact">
+
+
+        <div class="section-title">
+
+            <h2>
+                Me contacter
+            </h2>
+
+            <p>
+                Échangeons ensemble
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <!-- ===============================
+                 BLOC 1 : ME CONTACTER
+            ================================ -->
+
+            <div class="contact-card">
+
+                <h3>
+                    📩 Me contacter
+                </h3>
+
+                <p>
+
+                    Vous souhaitez échanger avec moi,
+                    en savoir plus sur mon parcours ou
+                    discuter d'une opportunité ?
+
+                </p>
+
+                <p>
+
+                    N'hésitez pas à me contacter
+                    directement par e-mail.
+
+                </p>
+
+
+                <a
+                    href="mailto:rumeysaksr68@gmail.com"
+                    class="contact-email"
+                >
+                    rumeysaksr68@gmail.com
+                </a>
+
+            </div>
+
+
+            <!-- ===============================
+                 BLOC 2 : RECHERCHE DE STAGE
+            ================================ -->
+
+            <div class="contact-card">
+
+                <h3>
+                    🎓 Recherche de stage
+                </h3>
+
+                <p>
+
+                    Je suis actuellement à la recherche
+                    d'un
+
+                    <span class="stage-highlight">
+                        stage de 5 semaines
+                    </span>
+
+                    dans le domaine de l'informatique,
+                    notamment dans le secteur de la
+                    cybersécurité.
+
+                </p>
+
+
+                <p>
+
+                    <span class="stage-title">
+                        Curieuse, motivée et sérieuse,
+                    </span>
+
+                    j'aime apprendre
